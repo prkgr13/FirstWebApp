@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+  <h3>Student Eligibility for Data Science Jobs(Select Between 1 to 3)</h3>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Machine Learning" placeholder="Machine Learning" required="required" />
+        <input type="text" name="Deep Learning" placeholder="Deep Learning" required="required" />
+    <input type="text" name="UG" placeholder="UG" required="required" />
+    <input type="text" name="PG" placeholder="PG" required="required" />
+    <input type="text" name="Statistical Data Analysis" placeholder="Statistical Data Analysis" required="required" />
+    <input type="text" name="Python" placeholder="Python" required="required" />
+    <input type="text" name="Data Science" placeholder="Data Science" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
